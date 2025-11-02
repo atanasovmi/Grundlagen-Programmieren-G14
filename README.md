@@ -139,12 +139,20 @@ The application reads and writes data using files:
 
 ### 📂 Repository Structure
 ```text
-PizzaRP/
-├── main.py             # main program logic (console application)
-├── menu.txt            # pizza menu (input data file)
-├── invoice_001.txt     # example of a generated invoice (output file)
-├── docs/               # optional screenshots or project documentation
-└── README.md           # project description and milestones
+workout-tracker/
+├── main.py
+├── data/
+│   └── workout_log.csv
+├── models/
+│   ├── workout.py
+│   ├── user.py
+│   └── exercise.py
+├── utils/
+│   ├── file_handler.py
+│   ├── validation.py
+│   └── calculator.py
+├── requirements.txt
+└── README.md
 ```
 
 ### How to Run
