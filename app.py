@@ -1,5 +1,5 @@
 from modules.ui import display_menu, get_menu_choice, get_workout_type_choice, get_duration, get_date
-
+from modules.storage import save_workout
 
 def main():
     """Main program loop"""
@@ -18,8 +18,9 @@ def main():
             workout_type = get_workout_type_choice()
             duration = get_duration()
             date = get_date()
+            save_workout(workout_type,duration,date) # saved to database/CSV
 
-            # Here you would save to database/CSV
+            
             print(f"\n✅ Workout gespeichert! ({date}, {workout_type}, {duration} min)")
 
         elif choice == "2":
