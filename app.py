@@ -1,4 +1,7 @@
 from modules.ui import display_menu, get_menu_choice, get_workout_type_choice, get_duration, get_date
+from modules.history import show_history
+
+show_history()
 
 
 def main():
