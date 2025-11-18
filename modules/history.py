@@ -1,7 +1,7 @@
 # modules/history.py
 
 import csv
-
+# Kalorien-Verbrauch (pro Minute)
 CALORIE_RATE = {
     "Schwimmen": 9,
     "Yoga": 4,
@@ -17,13 +17,14 @@ def calculate_calories(workout_type, duration):
 
 def suggestions(calories, workout_type):
     if calories < 100:
-        return "Daha uzun veya yoğun bir workout yapabilirsin."
+        return "Du könntest ein längeres oder intensiveres Workout machen."
     elif calories < 300:
-        return f"{workout_type} çalışmalarını biraz artırabilirsin."
+        return f"Du kannst dein {workout_type}-Training ein wenig steigern."
     else:
-        return "Harika! Bugün yeterince kalori yaktın."
+        return "Super! Du hast heute genug Kalorien verbrannt."
 
 def show_history(csv_file="workout_log.csv"):
+    """Zeigt die Trainingshistorie aus der CSV-Datei in der Konsole an."""
     try:
         with open(csv_file, newline='', encoding='utf-8') as f:
             reader = csv.reader(f)
@@ -32,7 +33,9 @@ def show_history(csv_file="workout_log.csv"):
                 if not row:
                     continue
                 data_found = True
-                # Format kontrolü
+                # Format erkennen
+                # Format A → "Schwimmen,10,01.01.2025"
+                # Format B → "01.01.2025,Schwimmen,10"
                 if "." in row[0]:  # date, workout_type, duration
                     date = row[0]
                     workout_type = row[1]
@@ -46,18 +49,20 @@ def show_history(csv_file="workout_log.csv"):
                 advice = suggestions(calories, workout_type)
 
                 print("---------------------")
-                print(f"Tarih : {date}")
-                print(f"Tür   : {workout_type}")
-                print(f"Süre  : {duration} dakika")
-                print(f"Kalori: {calories} kcal")
-                print(f"Öneri : {advice}")
+                print(f"Datum     : {date}")
+                print(f"Art       : {workout_type}")
+                print(f"Dauer     : {duration} Minuten")
+                print(f"Kalorien  : {calories} kcal")
+                print(f"Empfehlung: {advice}")
                 print("---------------------\n")
 
             if not data_found:
-                print("Henüz kayıt bulunamadı.")
+                print("Keine Einträge gefunden.")
 
     except FileNotFoundError:
-        print(f"{csv_file} bulunamadı.")
+        print(f"❌ CSV-Datei nicht gefunden: {csv_file}")
+    except ValueError:
+        print("❌ In der CSV-Datei steht eine ungültige Dauer (keine Zahl)!")
     except Exception as e:
-        print(f"Hata: {e}")
+        print(f"❌ Unbekannter Fehler: {e}")
 
