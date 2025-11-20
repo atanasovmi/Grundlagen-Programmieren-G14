@@ -1,5 +1,6 @@
 from modules.ui import display_menu, get_menu_choice, get_workout_type_choice, get_duration, get_date
 from modules.storage import save_workout
+from modules.workout import edit_workout
 from modules.history import show_history
 
 
