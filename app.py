@@ -21,14 +21,15 @@ def main():
             workout_type = get_workout_type_choice()
             duration = get_duration()
             date = get_date()
+            save_workout(workout_type,duration,date) # saved to database/CSV
 
-            # Here you would save to database/CSV
+            
             print(f"\n✅ Workout gespeichert! ({date}, {workout_type}, {duration} min)")
 
         elif choice == "2":
             # Mutate/Update workout
             print("\n--- Workout mutieren ---")
-            print("(Diese Funktion kommt später)")
+            edit_workout()
 
         elif choice == "3":
             # Delete workout
