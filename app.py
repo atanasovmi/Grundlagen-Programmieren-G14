@@ -2,7 +2,7 @@ from modules.ui import display_menu, get_menu_choice, get_workout_type_choice, g
 from modules.storage import save_workout
 from modules.history import show_history
 
-show_history()
+
 
 
 def main():
@@ -39,7 +39,7 @@ def main():
         elif choice == "4":
             # View history
             print("\n--- Historie einsehen ---")
-            print("(Diese Funktion kommt später)")
+            show_history()
 
         elif choice == "0":
             print("\nAuf Wiedersehen!")
