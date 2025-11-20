@@ -4,8 +4,6 @@ from modules.workout import edit_workout
 from modules.history import show_history
 
 
-
-
 def main():
     """Main program loop"""
 
