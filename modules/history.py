@@ -119,5 +119,3 @@ def show_history(csv_file="data/workout_log.csv"):
         print(f"❌ CSV-Datei nicht gefunden: {csv_file}")
     except ValueError:
         print("❌ In der CSV-Datei steht eine ungültige Dauer (keine Zahl)!")
-    except Exception as e:
-        print(f"❌ Unbekannter Fehler: {e}")
