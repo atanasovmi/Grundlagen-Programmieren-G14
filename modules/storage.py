@@ -19,5 +19,3 @@ def save_workout(workout_type,duration,date):
 
     with open(WORKOUT_FILE, "a") as file:
         file.write(f"{date},{workout_type},{duration}\n")  # Zeile wird in CSV-Format gespeichert
-
-
