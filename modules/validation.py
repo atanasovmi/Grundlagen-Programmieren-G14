@@ -6,7 +6,7 @@ from datetime import datetime
 def validiere_datum(datum_text):
     """
     Prüft, ob der eingegebene Text ein gültiges Datum im Format TT.MM.JJJJ ist.
-    Wirft einen ValueError, wenn das Format falsch ist.
+    Wirft einen ValueError auf, wenn das Format falsch ist.
     """
     try:
         # Versuche, den Text in ein Datum umzuwandeln

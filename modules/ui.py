@@ -6,11 +6,14 @@ from datetime import datetime
 
 def zeige_hauptmenue():
     """Zeigt das Hauptmenü an."""
-    print("\n                                                    ▄▄ ▄▄ ")
-    print("██  ██  ▄▄▄  ▄▄ ▄▄ ▄▄▄▄ ▄▄▄▄▄▄ ▄▄   ▄▄ ▄▄▄▄▄ ▄▄  ▄▄ ▄▄ ▄▄ ")
-    print("██████ ██▀██ ██ ██ ██▄█▀  ██   ██▀▄▀██ ██▄▄  ███▄██ ██ ██ ")
-    print("██  ██ ██▀██ ▀███▀ ██     ██   ██   ██ ██▄▄▄ ██ ▀██ ▀███▀ ")
-    print("                                                          ")
+    logo = r""" 
+                                                          
+                                                     ▄ ▄  
+██  ██  ▄▄▄  ▄▄ ▄▄ ▄▄▄▄ ▄▄▄▄▄▄ ▄▄   ▄▄ ▄▄▄▄▄ ▄▄  ▄▄ ▄▄ ▄▄ 
+██████ ██▀██ ██ ██ ██▄█▀  ██   ██▀▄▀██ ██▄▄  ███▄██ ██ ██ 
+██  ██ ██▀██ ▀███▀ ██     ██   ██   ██ ██▄▄▄ ██ ▀██ ▀███▀
+"""
+    print(f"\n {logo}")
     print("1. Training eintragen")
     print("2. Training bearbeiten")
     print("3. Training löschen")
@@ -28,6 +31,8 @@ def frage_datum():
             return v.validiere_datum(datum_input)
         except ValueError as e:
             print(f"Fehler: {e}")
+        except Exception as e:
+            print(f"Ein unerwarteter Fehler ist aufgetreten: {e}")
 
 def frage_datum_oder_abbruch():
     """Fragt ein Datum ab und validiert es. Gibt None zurück bei 0 (Abbruch)."""
@@ -41,6 +46,8 @@ def frage_datum_oder_abbruch():
             return v.validiere_datum(datum_input)
         except ValueError as e:
             print(f"Fehler: {e}")
+        except Exception as e:
+            print(f"Ein unerwarteter Fehler ist aufgetreten: {e}")
 
 def frage_uebung(uebungen_dict):
     """
@@ -66,6 +73,8 @@ def frage_dauer():
             return v.validiere_ganzzahl(dauer_input)
         except ValueError as e:
             print(f"Fehler: {e}")
+        except Exception as e:
+            print(f"Ein unerwarteter Fehler ist aufgetreten: {e}")
 
 def zeige_historie(daten):
     """Gibt die Trainingsdaten tabellarisch aus."""
@@ -103,6 +112,8 @@ def zeige_loesch_menue(treffer):
                 print("Ungültige Nummer.")
         except ValueError as e:
             print(f"Fehler: {e}")
+        except Exception as e:
+            print(f"Ein unerwarteter Fehler ist aufgetreten: {e}")
 
 def zeige_bearbeitungs_menue(treffer):
     """
@@ -125,6 +136,8 @@ def zeige_bearbeitungs_menue(treffer):
                 print("Ungültige Nummer.")
         except ValueError as e:
             print(f"Fehler: {e}")
+        except Exception as e:
+            print(f"Ein unerwarteter Fehler ist aufgetreten: {e}")
 
 def frage_monat():
     """
@@ -139,6 +152,8 @@ def frage_monat():
             return v.validiere_monat(eingabe)
         except ValueError as e:
             print(f"Fehler: {e}")
+        except Exception as e:
+            print(f"Ein unerwarteter Fehler ist aufgetreten: {e}")
 
 def frage_monat_oder_abbruch():
     """
@@ -155,6 +170,8 @@ def frage_monat_oder_abbruch():
             return v.validiere_monat(eingabe)
         except ValueError as e:
             print(f"Fehler: {e}")
+        except Exception as e:
+            print(f"Ein unerwarteter Fehler ist aufgetreten: {e}")
 
 def frage_jahr(verfuegbare_jahre):
     """
@@ -178,6 +195,8 @@ def frage_kalorien_ziel():
             print("Bitte eine positive Zahl eingeben.")
         except ValueError:
             print("Ungültige Eingabe. Bitte eine ganze Zahl eingeben.")
+        except Exception as e:
+            print(f"Ein unerwarteter Fehler ist aufgetreten: {e}")
 
 def zeige_empfehlung_menue():
     """
@@ -222,4 +241,5 @@ def zeige_feld_auswahl_menue(eintrag):
                 print("Bitte 0-3 wählen.")
         except ValueError as e:
             print(f"Fehler: {e}")
-
+        except Exception as e:
+            print(f"Ein unerwarteter Fehler ist aufgetreten: {e}")
