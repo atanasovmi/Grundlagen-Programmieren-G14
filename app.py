@@ -149,12 +149,12 @@ def historie_einsehen():
         monat = ui.frage_monat_oder_abbruch()
         
         if monat is False:
-            # User hat 0 eingegeben -> Abbruch
+            # User hat 0 eingegeben → Abbruch
             print("Abbruch.")
             return
         
         if monat is None:
-            # Kein Filter -> Alles zeigen
+            # Kein Filter → Alles zeigen
             print("\nZeige alle Einträge:")
             ui.zeige_historie(daten)
             return
@@ -164,11 +164,11 @@ def historie_einsehen():
         
         if jahre:
             if len(jahre) > 1:
-                # Mehrere Jahre gefunden -> User fragen
+                # Mehrere Jahre gefunden → User fragen
                 jahr = ui.frage_jahr(jahre)
                 filter_str = f"{monat}.{jahr}"
             else:
-                # Nur ein Jahr gefunden -> Automatisch wählen
+                # Nur ein Jahr gefunden → Automatisch wählen
                 filter_str = f"{monat}.{jahre[0]}"
                 
             daten_gefiltert = workout.filtere_daten_nach_monat(daten, filter_str)
