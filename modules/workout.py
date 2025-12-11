@@ -29,7 +29,7 @@ def berechne_kalorien(dauer, faktor):
 def filtere_daten_nach_datum(daten, datum):
     """
     Sucht alle Einträge, die zum angegebenen Datum passen.
-    Gibt eine Liste von Tupeln zurück: (Original-Index, Zeile)
+    Gibt eine Liste von Tupeln zurück
     """
     treffer = []
     for index, zeile in enumerate(daten):
@@ -115,7 +115,7 @@ def generiere_workout_mix(ziel_kalorien):
     else:
         max_uebungen = len(UEBUNGEN_KALORIEN)
     
-    # Zufällige Anzahl Übungen wählen (mindestens 1, maximal max_uebungen)
+    # Zufällige Anzahl Übungen wählen
     anzahl = random.randint(1, max_uebungen)
     
     # Zufällige Übungen auswählen
@@ -129,8 +129,8 @@ def generiere_workout_mix(ziel_kalorien):
     if anzahl == 1:
         kalorien_pro_uebung = [ziel_kalorien]
     else:
-        # Zufällige Gewichtung für jede Übung
-        weights = [random.random() for _ in range(anzahl)]
+        # Zufällige Gewichtung (nutze uniform damit keine Übung fast 0 erhält) --> wie im Coaching mit Felix besprochen
+        weights = [random.uniform(0.3, 1.0) for _ in range(anzahl)]
         total_weight = sum(weights)
         kalorien_pro_uebung = [int(w / total_weight * ziel_kalorien) for w in weights]
         

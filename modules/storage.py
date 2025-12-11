@@ -2,6 +2,7 @@
 # Liest und schreibt Daten in die CSV-Datei
 import os
 
+#Meine eigenen Notizen fürs debbuging → Lokaler Error
 # Pfad zur CSV-Datei relativ zu diesem Modul
 # __file__ ist .../modules/storage.py
 # dirname(__file__) ist .../modules

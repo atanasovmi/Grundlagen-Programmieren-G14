@@ -182,7 +182,7 @@ def historie_einsehen():
 
 def assistent_starten():
     """
-    Funktion 5: Assistent starten (ehemals Kalorienrechner).
+    Funktion 5: Assistent starten (ehemals Kalorienrechner aus Meeting neu gedacht dank Aydin).
     """
     print("\n--- Workout-Assistent ---")
     
@@ -203,7 +203,7 @@ def assistent_starten():
             print("Workout gespeichert, Viel Spass!")
             break
         elif wahl == '2':
-            # Neu generieren -> Loop continues
+            # Neu generieren -> Loop continues weiter
             continue
         elif wahl == '0':
             # Abbruch

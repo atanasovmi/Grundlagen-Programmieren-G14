@@ -1,0 +1,5 @@
+inquirer
+tabulate
+rich
+pandas
+matplotlib
