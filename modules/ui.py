@@ -70,7 +70,10 @@ def frage_dauer():
     while True:
         dauer_input = input("Dauer in Minuten: ")
         try:
-            return v.validiere_ganzzahl(dauer_input)
+            # Schritt 1: Ganzzahl validieren
+            zahl = v.validiere_ganzzahl(dauer_input)
+            # Schritt 2: Dauer validieren (<= 480)
+            return v.validiere_dauer_ubung(zahl)
         except ValueError as e:
             print(f"Fehler: {e}")
         except Exception as e:
