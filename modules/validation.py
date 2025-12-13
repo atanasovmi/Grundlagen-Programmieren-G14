@@ -83,3 +83,14 @@ def validiere_kalorien_ziel(text):
         raise ValueError("Bitte eine positive Zahl eingeben (> 0).")
     except ValueError as e:
         raise ValueError("Ungültige Eingabe. Bitte eine ganze Zahl eingeben.") from e
+    
+def validiere_dauer_ubung(text):
+    """
+    Prüft der Wert  480 Minuten nicht überschreitet,
+    da mehr tägliche Übungszeit praktisch unrealistisch ist.
+    """
+    
+    if text > 480:
+        raise ValueError("Wow, das wäre ein Marathon ohne Pause! Bitte geben Sie weniger als 480 Minuten ein.")
+    
+    return text
