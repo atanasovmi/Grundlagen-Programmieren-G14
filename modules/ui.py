@@ -1,7 +1,7 @@
 import modules.validation as v
 from datetime import datetime
 
-# Modul für die Benutzeroberfläche
+# Modul für die Benutzeroberfläche UI/UX
 # Enthält Menüs und Eingabeaufforderungen
 
 def zeige_hauptmenue():
@@ -60,10 +60,11 @@ def frage_uebung(uebungen_dict):
     
     while True:
         auswahl = input("Bitte Nummer der Übung wählen: ")
-        if auswahl in uebungen_dict:
-            return uebungen_dict[auswahl]["name"], uebungen_dict[auswahl]["kcal_pro_min"]
-        else:
-            print("Ungültige Auswahl. Bitte eine Nummer aus der Liste wählen.")
+        try:
+            valide_auswahl = v.validiere_uebung_wahl(auswahl, uebungen_dict)
+            return uebungen_dict[valide_auswahl]["name"], uebungen_dict[valide_auswahl]["kcal_pro_min"]
+        except ValueError as e:
+            print(f"Fehler: {e}")
 
 def frage_dauer():
     """Fragt die Dauer ab und validiert sie."""
@@ -139,21 +140,21 @@ def zeige_bearbeitungs_menue(treffer):
         except Exception as e:
             print(f"Ein unerwarteter Fehler ist aufgetreten: {e}")
 
-def frage_monat():
-    """
-    Fragt nach einem Monat (1-12).
-    Gibt den Monat als String 'MM' zurück oder None, wenn leer.
-    """
-    while True:
-        eingabe = input("Filter nach Monat (1-12) [Leer für alle]: ")
-        if not eingabe:
-            return None
-        try:
-            return v.validiere_monat(eingabe)
-        except ValueError as e:
-            print(f"Fehler: {e}")
-        except Exception as e:
-            print(f"Ein unerwarteter Fehler ist aufgetreten: {e}")
+# def frage_monat():
+#     """
+#     Fragt nach einem Monat (1-12).
+#     Gibt den Monat als String 'MM' zurück oder None, wenn leer.
+#     """
+#     while True:
+#         eingabe = input("Filter nach Monat (1-12) [Leer für alle]: ")
+#         if not eingabe:
+#             return None
+#         try:
+#             return v.validiere_monat(eingabe)
+#         except ValueError as e:
+#             print(f"Fehler: {e}")
+#         except Exception as e:
+#             print(f"Ein unerwarteter Fehler ist aufgetreten: {e}")
 
 def frage_monat_oder_abbruch():
     """
@@ -189,12 +190,9 @@ def frage_kalorien_ziel():
     while True:
         try:
             ziel_input = input("Mein Ziel sind heute (kcal): ")
-            ziel = int(ziel_input)
-            if ziel > 0:
-                return ziel
-            print("Bitte eine positive Zahl eingeben.")
-        except ValueError:
-            print("Ungültige Eingabe. Bitte eine ganze Zahl eingeben.")
+            return v.validiere_kalorien_ziel(ziel_input)
+        except ValueError as e:
+             print(f"Fehler: {e}")
         except Exception as e:
             print(f"Ein unerwarteter Fehler ist aufgetreten: {e}")
 

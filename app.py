@@ -173,7 +173,8 @@ def historie_einsehen():
                 
             daten_gefiltert = workout.filtere_daten_nach_monat(daten, filter_str)
             monat_name = workout.MONAT_NAMEN.get(monat, monat)
-            print(f"\nZeige Einträge für {monat_name} {jahre[0] if len(jahre) == 1 else jahr}:")
+            print(f"\nZeige Einträge für {monat_name}"
+                  f" {jahre[0] if len(jahre) == 1 else jahr}:")
             ui.zeige_historie(daten_gefiltert)
             return
         else:

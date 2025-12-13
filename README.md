@@ -5,7 +5,7 @@
 
   **Track. Analyze. Improve.**
   
-  [![Python](https://img.shields.io/badge/Python-3.x-blue?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
+  [![Python](https://img.shields.io/badge/Python-3.13-blue?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
   [![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)](LICENSE)
   [![Status](https://img.shields.io/badge/Status-Active-success?style=for-the-badge)]()
   [![FHNW](https://img.shields.io/badge/FHNW-Student%20Project-red?style=for-the-badge)](https://www.fhnw.ch/)

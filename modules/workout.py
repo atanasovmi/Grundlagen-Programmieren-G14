@@ -4,13 +4,20 @@ from datetime import datetime
 # Modul für die Trainingslogik
 # Enthält Berechnungen und Datenmanipulationen
 
+# Übungsnamen als Konstanten nach Tipp von Felix als Best Practice
+NAME_JOGGEN = "Joggen"
+NAME_SCHWIMMEN = "Schwimmen"
+NAME_RADFAHREN = "Radfahren"
+NAME_KRAFTTRAINING = "Krafttraining"
+NAME_YOGA = "Yoga"
+
 # Kalorienverbrauch pro Minute für verschiedene Übungen (Beispielwerte)
 UEBUNGEN_KALORIEN = {
-    "1": {"name": "Joggen", "kcal_pro_min": 10},
-    "2": {"name": "Schwimmen", "kcal_pro_min": 8},
-    "3": {"name": "Radfahren", "kcal_pro_min": 7},
-    "4": {"name": "Krafttraining", "kcal_pro_min": 6},
-    "5": {"name": "Yoga", "kcal_pro_min": 4}
+    "1": {"name": NAME_JOGGEN, "kcal_pro_min": 10},
+    "2": {"name": NAME_SCHWIMMEN, "kcal_pro_min": 8},
+    "3": {"name": NAME_RADFAHREN, "kcal_pro_min": 7},
+    "4": {"name": NAME_KRAFTTRAINING, "kcal_pro_min": 6},
+    "5": {"name": NAME_YOGA, "kcal_pro_min": 4}
 }
 
 # Monatsnamen für bessere Ausgabe
