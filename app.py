@@ -1,6 +1,7 @@
 import modules.ui as ui
 import modules.storage as storage
 import modules.workout as workout
+import modules.viz as viz
 
 # Dateiname für die Datenspeicherung wird aus storage importiert
 DATEI_PFAD = storage.DATA_PATH
@@ -210,6 +211,14 @@ def assistent_starten():
             # Abbruch
             break
 
+def analytiken():
+    """
+    Called viz.py als Standalone Lösung, da es nicht offiziell zum Projekt gehört,
+    sondern wie als Extra wie 'Easteregg' angezeigt wird.
+    """
+    daten = storage.lade_daten(DATEI_PFAD)
+    viz.zeige_analytik_menue(daten)
+
 def main():
     """
     Hauptfunktion mit Menüschleife.
@@ -231,11 +240,13 @@ def main():
             historie_einsehen()
         elif wahl == '5':
             assistent_starten()
+        elif wahl == '6':
+            analytiken()
         elif wahl == '0':
             print("Programm wird beendet. Auf Wiedersehen!")
             break
         else:
-            print("Ungültige Eingabe. Bitte wählen Sie 0-5.")
+            print("Ungültige Eingabe. Bitte wählen Sie 0-6.")
             
 
 if __name__ == "__main__":

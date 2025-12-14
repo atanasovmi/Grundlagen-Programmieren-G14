@@ -7,11 +7,13 @@ from datetime import datetime
 def zeige_hauptmenue():
     """Zeigt das Hauptmenü an."""
     logo = r""" 
+
                                                           
                                                      ▄ ▄  
 ██  ██  ▄▄▄  ▄▄ ▄▄ ▄▄▄▄ ▄▄▄▄▄▄ ▄▄   ▄▄ ▄▄▄▄▄ ▄▄  ▄▄ ▄▄ ▄▄ 
 ██████ ██▀██ ██ ██ ██▄█▀  ██   ██▀▄▀██ ██▄▄  ███▄██ ██ ██ 
 ██  ██ ██▀██ ▀███▀ ██     ██   ██   ██ ██▄▄▄ ██ ▀██ ▀███▀
+
 """
     print(f"\n {logo}")
     print("1. Training eintragen")
@@ -19,6 +21,7 @@ def zeige_hauptmenue():
     print("3. Training löschen")
     print("4. Historie einsehen")
     print("5. Assistent starten")
+    print("6. Analytiken")
     print("0. Beenden")
 
 def frage_datum():
