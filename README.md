@@ -12,7 +12,7 @@
 
   <p align="center">
     A powerful, console-based companion for your fitness journey. <br>
-    Built with ❤️ by Group 14.
+    Made with ❤️ by Group 14.
   </p>
 </div>
 
@@ -34,7 +34,9 @@
 
 Many fitness enthusiasts struggle to consistently track their workout progress. Manual logging is tedious, and without data, motivation fades. 
 
-**Workout Tracker G14** solves this by providing a robust, persistent, and easy-to-use command-line interface (CLI) to log exercises, calculate calories, and visualize your history. Whether you're running, swimming, or hitting the gym, we help you keep score of your health.
+**Workout Tracker G14** of Felix & Hermanns Programming Class at the University
+of Applied Sciences and Arts at the Northwestern Switzerland (FHNW). solves this by providing a robust,
+persistent, and easy-to-use command-line interface (CLI) to log exercises, calculate calories, and visualize your history. Whether you're running, swimming, or hitting the gym, we help you keep score of your health.
 
 > *"What gets measured, gets managed."*
 
@@ -48,6 +50,7 @@ Many fitness enthusiasts struggle to consistently track their workout progress. 
 | 🔥 **Calorie Calculator** | Automatic calorie estimation based on exercise intensity. |
 | 📊 **History & Analysis** | View your training history with smart filtering by month/year. |
 | 🤖 **Smart Assistant** | Get personalized workout recommendations based on your calorie goals. |
+| 📈 **Deep Analytics** | Visualize your progress with Heatmaps, Radar Charts, and beautiful KPI Dashboards. |
 | 💾 **Auto-Save** | Your data is persistent and safely stored in CSV format. |
 | 🛡️ **Robust Validation** | Smart input handling ensures your data is always clean. |
 
@@ -72,7 +75,7 @@ Many fitness enthusiasts struggle to consistently track their workout progress. 
     ```bash
     pip install -r requirements.txt
     ```
-    *(Note: The core application runs with standard Python libraries.)*
+    *(Note: Libraries like `pandas` and `matplotlib` are required for the Analytics module.)*
 
 ---
 
@@ -93,7 +96,8 @@ You will be greeted by the interactive menu:
 3. Training löschen
 4. Historie einsehen
 5. Assistent starten
-0. Speichern & Beenden
+6. Analytiken
+0. Beenden
 ```
 
 Simply enter the number corresponding to the action you want to perform.
@@ -107,11 +111,14 @@ Grundlagen-Programmieren-G14/
 ├── app.py                  # 🚀 Main entry point
 ├── assets/                 # 🖼️ Images and static assets
 ├── data/
-│   └── workout_log.csv     # 💾 Persistent data storage
+│   ├── workout_log.csv     # 💾 Persistent data storage
+│   └── generator.py        # 🎲 Test data generator
 ├── modules/
 │   ├── ui.py               # 🎨 User Interface & Menus
 │   ├── storage.py          # 💾 File I/O operations
-│   └── workout.py          # 🧠 Core logic & calculations
+│   ├── workout.py          # 🧠 Core logic & calculations
+│   ├── viz.py              # 📈 Visualization & Analytics
+│   └── validation.py       # 🛡️ Input Validation
 ├── requirements.txt        # 📦 Dependencies
 └── README.md               # 📄 This file
 ```
