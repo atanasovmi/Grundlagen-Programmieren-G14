@@ -60,7 +60,7 @@ persistent, and easy-to-use command-line interface (CLI) to log exercises, calcu
 
 ### Prerequisites
 
-- **Python 3.x** installed on your system.
+- **Python 3.13** installed on your system.
 - A terminal or command prompt.
 
 ### Installation
